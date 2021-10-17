@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.2)  16 OCT 2021 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.2)  17 OCT 2021 10:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,7 +956,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
 Here is how much of TeX's memory you used:
  20443 strings out of 480608
  380727 string characters out of 5903631
- 837412 words of memory out of 5000000
+ 837410 words of memory out of 5000000
  35880 multiletter control sequences out of 15000+600000
  540143 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -972,7 +972,7 @@ local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local
 /texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on DEAS.pdf (2 pages, 108952 bytes).
+Output written on DEAS.pdf (2 pages, 108877 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
