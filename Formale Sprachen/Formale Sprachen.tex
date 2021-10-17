@@ -1,0 +1,235 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{SS 21}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{#1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Deterministische Endliche Automaten}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium \Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Formale Sprachen}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Definition{Definition}
+Eine \textbf{Grammatik} ist ein Tupel $(N,T,S,P)$ wobei 
+\begin{align*}
+N:&\ Alphabet\  der \textbf{ nichtterminalen }Symbole \\
+T:&\ Alphabet\  der \textbf{ terminalen }Symbole \text{ (mit }T\cap N=\emptyset)\\
+S:&\ Startsymbol\ \in N \\
+P:&\ Produktionen \ \subset (N\cup T)^+ \times(N\cup T)^*
+\end{align*}
+\Definition{Chomsky Hierarchie}
+\begin{enumerate}[ ]
+\item Typ 0: Keine Bedingung
+\item Typ 1: Für alle Produktionen  $\alpha \rightarrow \beta$ gilt: $\alpha, \beta \in (N\cup T)^+$ und $\vert \alpha \vert \leq \vert \beta \vert$
+\item Typ 2: Für alle Produktionen  $\alpha \rightarrow \beta$ gilt: $ \beta \in (N\cup T)^+$ und $\alpha \  \in \ N$
+\item Typ 3: Für alle Produktionen  $\alpha \rightarrow \beta$ gilt: $\alpha \  \in \ N$ und $\beta = tB$, wobei $t \in T^*$ und $B \in N \cup\{ \epsilon \}$ und $\beta \neq \epsilon$.
+\end{enumerate}
+Sonderregel Leeres Wort:\\
+Zusätlich wird die Produktion $$S_{neu} \rightarrow \epsilon \vert S_{alt}$$ erlaubt um das Leere Wort zuzulassen.
+\\
+
+\Definition{Normalformen}
+
+\begin{tabular}{c|c|c|c|c}
+Typ & 3 & 2 & 1 & 0   \\
+\hline
+$A\rightarrow \epsilon$ & & & &$\times$\\
+\hline
+$A\rightarrow t$ &$\times$ &$\times$ &$\times$ &$\times$\\
+\hline
+$A\rightarrow tB$ &$\times$ & & &$\times$\\
+\hline
+$A\rightarrow BC$ & &$\times$ &$\times$ &$\times$\\
+\hline
+$AB\rightarrow CD$ & & & $\times$&$\times$\\
+\end{tabular}
+\\
+
+
+\Aufgabe{1}
+Gegeben seien die Produktionen von Grammatiken. Geben sie jeweils den restriktivsten Typ  gemäß der Chomsky Hierarchie an.
+\begin{enumerate}[a)]
+\item $ \{ S \rightarrow  $
+\end{enumerate}
+
+\Aufgabe{2}
+Sei L=$\{(abc)^n d^m \vert k \in \mathbb{N}, \ m\in \mathbb{N}_0 \}$
+\begin{enumerate}[a)]
+\item Geben sie eine Typ-3 Grammatik an, die L erzeugt.
+\item Geben sie auf Basis der Grammatik von (a eine Ableitung des Wortes $abcabcddd$ an.
+\item Normalisieren sie die Grammatik von a).
+\item Konstruieren sie den zugehörigen endlichen Automaten.
+\end{enumerate}
+
+\Aufgabe{3}
+Sei L=$\{(ab)^n(cd)^m \vert k \in \mathbb{N}, \ m\in \mathbb{N}_0 \}$
+\begin{enumerate}[a)]
+\item Geben sie eine Typ-3 Grammatik an, die L erzeugt.
+\item Geben sie auf Basis der Grammatik von (a eine Ableitung des Wortes $abcdcdcd$ an.
+\item Normalisieren sie die Grammatik von a).
+\item Konstruieren sie den zugehörigen endlichen Automaten.
+\end{enumerate}
+
+\Aufgabe{4}
+Sei $R = ((ba)^* \cup c ) d^* $
+und L die von R erzeugte Sprache.
+\begin{enumerate}[a)]
+\item Geben sie eine Typ-3 Grammatik an, die L erzeugt.
+\item Geben sie auf Basis der Grammatik von (a eine Ableitung des Wortes $babad$ an.
+\item Normalisieren sie die Grammatik von a).
+\item Konstruieren sie den zugehörigen endlichen Automaten.
+\end{enumerate}
+
+
+\Aufgabe{5}
+Geben sie die zugehörige Typ-3 Grammatik des folgenden Automaten an.
+
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (N0) {$N_0$};
+  \node[state, right=of N0, accepting] (N1) {$N_1$};
+\path[->]
+(N0) edge [bend left] node {x} (N1)
+(N1) edge [loop above] node {y} (N1);
+\end{tikzpicture}
+
+\begin{tikzpicture}[auto, thick, auto]
+   \node[initial, state] (N2) {$N_2$};
+     \node[state, right=of N2, accepting] (N3) {$N_3$};
+\path[->]
+(N2) edge [bend left] node {y} (N3)
+(N2) edge [loop above] node {x} (N2);
+\end{tikzpicture}
+\\
+
+
+\Aufgabe{6}
+Geben sie die zugehörige Typ-3 Grammatik des folgenden Automaten an.
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$S_0$};
+  \node[state, right=of S0] (S1) {$S_1$};
+   \node[state, right=of S1, accepting] (S2) {$S_2$};
+\path[->]
+(S0) edge [bend left] node {a} (S1)
+(S1) edge [bend left] node {a} (S2)
+(S1) edge [bend left] node {a,b} (S0);
+\end{tikzpicture}
+
+
+
+
+\Aufgabe{7}
+Geben sie die zugehörige Typ-3 Grammatik des folgenden Automaten an.
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$S_0$};
+  \node[state, right=of S0] (S1) {$S_1$};
+   \node[state, right=of S1] (S2) {$S_2$};
+    \node[accepting, state, right=of S2] (S3) {$S_3$};
+    \node[state, below= of S0] (S4) {$S_4$};
+\path[->]
+(S3) edge [loop above] node {b} (S3)
+(S2) edge [loop above] node {b} (S2)
+(S4) edge [loop below] node {a,b} (S4)
+(S1) edge node {a} (S2)
+(S2) [bend left]edge node {a} (S3)
+(S0) edge node {b} (S4)
+(S1) edge node {b} (S4)
+(S0) edge node {a} (S1)
+(S3) [bend left]edge node {a} (S2);
+\end{tikzpicture}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+

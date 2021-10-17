@@ -1,0 +1,188 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{SS 21}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Definition #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Satz}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{#1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Deterministische Endliche Automaten}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium \Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Pumping Lemma}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Definition{Regul"are Sprache}
+Sei \textit{X} ein Alphabet und \textit{L} eine Sprache "uber \textit{X}.\\
+\textit{L} heißt regul"are Sprache genau dann wenn es einen endlichen Automaten \textit{A} (NEA oder DEA) gibt, mit L(\textit{A}) = \textit{L}.
+
+
+\Satz{Pumping - Lemma} 
+Sei \textit{L} eine regul"are Sprache "uber einem Alphabet \textit{X}. \\
+Es gibt ein $n \in \mathbb{N}$, so dass
+f"ur alle $x \in L$ mit  $\vert x \vert \geq n$ gilt: \\
+Es gibt eine Zerlegung $x = uvw$ mit $u,v,w \in X^*$ und: \\
+\begin{enumerate}[a)]
+\item $x=uvw$
+\item $\vert uv\vert \leq n$ oder $\vert vw\vert \leq n$
+\item $\vert v \vert \geq 1$
+\item $uv^iw \in L \ \forall i \in \mathbb{N}_0$
+\end{enumerate}
+Es gilt also:
+$$ \text{L ist eine regul"are Sprache} \Rightarrow \text{Bei L gilt das Pumping-Lemma} $$
+Durch negation der Aussage bekommen wir eine "aquivalente Aussage:
+$$ \text{Bei L gilt das Pumping-Lemma NICHT} \Rightarrow \text{L ist KEINE regul"are Sprache} $$
+Wie zeigt man, dass bei L das Pumping-Lemma nicht gilt?
+Folgende Schritte sind zu tun:
+
+\begin{enumerate}[1)]
+\item Sei $p \in \mathbb{N}$ beliebig. \\ \textit{Einfach Abschreiben }
+\item Finde ein Wort $x \in L \ mit \ \vert x\vert \geq p$. \\ \textit{Hier ist die Schwierigkeit das x so zu wählen, dass hinterher das v aus den Buchstaben bestehen muss, die das x aus der Sprache pumpen
+\\  Wir wissen vom pumpbaren Anteil v nicht wie lange er ist und nicht wo er genau im Wort ist. Wir wissen nur er ist in den ersten p Buchstaben. Deshalb ist es oft g"unstig das Wort so zu w"ahlen, dass die ersten p Buchstaben gleich sind.}
+\item Zerlege $x$ in $x=uvw$ mit $\vert uv\vert \leq p$ und $\vert v \vert \geq 1$.
+\\ \textit{Einfach Abschreiben }
+\item Bestimme aus welchen Buchstaben u,v,w bestehen.
+\\ \textit{Da nicht klar ist wie lang das u,v,w genau ist, werden meist f"ur die L"angen von u,v,w neue Variablen eingeführt }
+\item Bestimme $x_i = uv^iw$ mit den Buchstaben von 4).
+\\ \textit{Einfach Abschreiben nur u,v,w ersetzen mit dem was man von 4ten hat. }
+\item W"ahle i so, dass $x_i$ nicht mehr in der Sprache L ist.
+\\ \textit{Kurz "uberlegen welche W"orter in der Sprache sind und welche nicht und dann meist i sehr groß oder gleich 0 w"ahlen. }
+\item Begr"undung warum $x_i$ nicht in der Sprache ist.
+\\ \textit{$x_i$ vergleichen mit der Definition der Sprache}
+\item $\Rightarrow$ L ist nicht regul"ar
+\\ \textit{Profit}
+
+\end{enumerate}
+\Aufgabe{1}
+Zeige, dass die Sprache nicht regul"ar ist.
+\begin{enumerate}[a)]
+\item $L = \{a^nb^ma^n  \mid n,m \in \mathbb{N}\} $
+\item $L = \{a^{2n}b^n \mid n \in \mathbb{N}\} $
+\item $L = \{a^mb^n\mid n,m \in \mathbb{N}, m<n\} $
+\item $L = \{a^mb^n\mid n,m \in \mathbb{N}, m> n\} $
+\item $L = \{a^mb^nc^i \mid n,m,i \in \mathbb{N}, m+n<i \} $
+\item $L = \{a^mb^nc^i \mid n,m,i \in \mathbb{N}, m+i<n \} $
+\end{enumerate}
+
+
+\Aufgabe{Klausuraufgaben}
+Zeige, dass die Sprache nicht regul"ar ist.
+\begin{enumerate}[a)]
+\item
+$L = \{ x^pyx^ky \mid p,k \in \mathbb{N}, k > p     \}$
+\\ \\
+(Angelehnt an SoSe17 )
+\item
+$L = \{xy^iz^k \mid i,k \in \mathbb{N}, i \geq k \} $
+\\ \\
+(Angelehnt an SoSe20)
+\item
+$L = \{ab^nau \mid n \in \mathbb{N},u\in \{c,d\}^*,  \vert u \vert \leq n + 1 \} $
+\\ \\
+(Angelehnt an WS19/20)
+\item
+$L = \{x^iy^jx^k \mid i \in \mathbb{N}_0 j,k \in \mathbb{N}, j<k \} $
+\\ \\
+(Angelehnt an SoSe2020 Probe)
+\end{enumerate}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
