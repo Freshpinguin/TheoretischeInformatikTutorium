@@ -1,1 +1,2 @@
-Meine Arbeitsblätter für das Theoretische Informatik Tutorium an der TH-Nürnberg.
+# TheoretischeInformatikTutorium
+Arbeitsmaterial für das Tutorium Theoretische Informatik

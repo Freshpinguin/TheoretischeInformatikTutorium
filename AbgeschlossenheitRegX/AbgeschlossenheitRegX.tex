@@ -1,0 +1,307 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{OHM}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{#1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Deterministische Endliche Automaten}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium \Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Abgeschlossenheit der Regul"aren Sprachen}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Definition{Definition REG(X)}
+Sei X ein Alphabet. REG(X) heißt die \textbf{Menge der regul"aren Sprachen "uber X}.
+
+\Definition{Satz Abgeschlossenheit von REG(X)}
+Reg(X) ist abgeschlossen bez"uglich:
+\begin{enumerate}
+\item Schnitten  $\cap$
+\item Vereinigungen $\cup$
+\item Komplementbildung $^c$
+\item Komplexprodukt $\cdot$
+\item Kleene Abschluss $^*$
+\end{enumerate}
+Was bedeutet das?
+Haben wir zwei regul"are Sprachen $L_1$ und $L_2$ dann ist auch
+\begin{enumerate}
+\item deren Durchschnitt $L_1\cap L_2$,
+\item deren Vereinigung $L_1\cup L_2$,
+\item jeweils das Komplement $L_1^c := X^*-L_1$,
+\item deren Komplexprodukt $L_1\cdot L_2$,
+\item und jeweils der Kleene Abschluss $L_1^*$
+\end{enumerate}
+eine regul"are Sprache.
+\\
+\\
+\Aufgabe{1}
+Gegeben seien die folgende Endlichen Automaten
+$$
+A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3\},\{S_0\},\delta_1 \ siehe\  Graph,\{S_2,S_3\})
+$$
+$$
+A_2 = (\{a,b\},\{I_0,I_1,I_2\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_2\})
+$$
+
+$A_1$\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$S_0$};
+  \node[state, right=of S0] (S1) {$S_1$};
+   \node[state, right=of S1, accepting] (S2) {$S_2$};
+         \node[state, below=of S1, accepting] (S3) {$S_3$};
+\path[->]
+(S0) edge [bend left] node {b} (S1)
+(S1) edge [loop above] node {a,b} (S1)
+(S3) edge [bend left] node {a} (S1)
+(S2) edge [bend right] node {a,b} (S1)
+(S0) edge [bend right] node {a} (S3)
+(S3) edge [bend right] node {b} (S2)
+
+
+;
+\end{tikzpicture}
+\\
+$A_2$
+\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (I0) {$I_0$};
+   \node[state, below=of I0] (I1) {$I_1$};
+    \node[state, right=of I0, accepting] (I2) {$I_2$};
+\path[->]
+(I0) edge [bend left] node {a} (I2)
+(I0) edge [bend right] node {b} (I1)
+(I1) edge [] node {a,b} (I2)
+(I2) edge [bend left] node {a,b} (I1)
+;
+
+\end{tikzpicture}
+\\
+Konstruieren sie mit den aus der Vorlesung bekannten Verfahren folgende Automaten:
+\begin{enumerate}[a)]
+\item $A_1\cup A_2$,
+\item $A_1^c$,
+\item $A_1\cdot A_2$ und
+\item $A_1^*$.
+\end{enumerate}
+ 
+
+
+\Aufgabe{2}
+Gegeben seien die folgende Endlichen Automaten
+$$
+A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3,S_4,S_5\},\{S_0\},\delta_1 \ siehe\  Graph,\{S_4,S_5\})
+$$
+$$
+A_2 = (\{a,b\},\{I_0,I_1,I_2\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_2\})
+$$
+
+$A_1$\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$S_0$};
+  \node[state, right=of S0] (S1) {$S_1$};
+   \node[state, right=of S1] (S2) {$S_2$};
+      \node[state, right=of S2,accepting] (S4) {$S_4$};
+         \node[state, below=of S0] (S3) {$S_3$};
+            \node[state, below=of S4, accepting] (S5) {$S_5$};
+\path[->]
+(S0) edge [bend left] node {a} (S1)
+(S1) edge [bend left] node {a} (S2)
+(S2) edge [bend left] node {b} (S1)
+(S2) edge [bend left] node {a} (S4)
+(S0) edge [bend left] node {b} (S3)
+(S4) edge [bend left] node {a} (S3)
+(S5) edge [bend left] node {a,b} (S3)
+(S4) edge [bend left] node {b} (S5)
+
+;
+\end{tikzpicture}
+\\
+$A_2$
+\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (I0) {$I_0$};
+   \node[state, below=of I0] (I1) {$I_1$};
+    \node[state, right=of I0, accepting] (I2) {$I_2$};
+\path[->]
+(I2) edge [loop above] node {a} (I2)
+(I2) edge [bend right] node {b} (I1)
+(I0) edge [bend left] node {a} (I2)
+(I1) edge [bend right] node {a} (I2)
+(I1) edge [loop below] node {b} (I1)
+(I0) edge [bend right] node {b} (I1);
+
+\end{tikzpicture}
+\\
+Konstruieren sie mit den aus der Vorlesung bekannten Verfahren folgende Automaten:
+\begin{enumerate}[a)]
+\item $A_1\cup A_2$,
+\item $A_1^c$,
+\item $A_1\cdot A_2$ und
+\item $A_1^*$.
+\end{enumerate}
+ 
+
+\Aufgabe{3 ("Ahnlich wie Klausuraufgaben)}
+\begin{enumerate}[a)]
+\item
+Gegeben seien die folgende Endlichen Automaten
+$$
+A_1 = (\{x,y,z\},\{N_0,N_1,N_2\},\{N_0\},\delta_1 \ siehe\  Graph,\{N_1,N_2\})
+$$
+$$
+A_2 = (\{x,y,z\},\{I_0,I_1\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_1\})
+$$
+
+$A_1$\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$N_0$};
+  \node[state, right=of S0, accepting] (S1) {$N_1$};
+   \node[state, right=of S1, accepting] (S2) {$N_2$};
+\path[->]
+(S0) edge [bend left] node {x} (S1)
+(S1) edge [bend left] node {y} (S2);
+
+\end{tikzpicture}
+\\
+$A_2$
+\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$I_0$};
+   \node[state, right=of S1, accepting] (S1) {$I_1$};
+\path[->]
+(S0) edge [bend left] node {z} (S1);
+\end{tikzpicture}
+\\
+Konstruieren sie den endlichen Automaten $(A_1^* \cdot A_2)$ mit den Mitteln die sie aus der Vorlesung kennen.
+\\
+\item
+Gegeben seien die folgende Endlichen Automaten
+$$
+A_1 = (\{x,y,z\},\{N_0,N_1,N_2,N_3\},\{N_0,N_2\},\delta_1 \ siehe\  Graph,\{N_1,N_2\})
+$$
+$$
+A_2 = (\{x,y,z\},\{I_0,I_1\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_1\})
+$$
+
+$A_1$\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$N_0$};
+  \node[state, right=of S0, accepting] (S1) {$N_1$};
+\path[->]
+(S0) edge [bend left] node {x} (S1)
+(S1) edge [loop above] node {x} (S1);
+\end{tikzpicture}
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state, accepting] (S0) {$N_2$};
+  \node[state, right=of S0] (S1) {$N_3$};
+\path[->]
+(S0) edge [bend left] node {y} (S1)
+(S1) edge [bend left] node {y} (S0);
+\end{tikzpicture}
+\\
+$A_2$
+\\
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$I_0$};
+   \node[state, right=of S1, accepting] (S1) {$I_1$};
+\path[->]
+(S0) edge [loop above] node {z} (S0)
+(S0) edge [bend left] node {z} (S1);
+\end{tikzpicture}
+\\
+Konstruieren sie den endlichen Automaten $(A_1 \cdot A_2)^*$ mit den Mitteln die sie aus der Vorlesung kennen.
+\\
+
+
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+

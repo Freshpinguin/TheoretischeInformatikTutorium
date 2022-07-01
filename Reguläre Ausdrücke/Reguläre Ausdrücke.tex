@@ -1,0 +1,197 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{OHM}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Definition #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Reguläre Sprachen}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium \Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Reguläre Ausdrücke}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\Aufgabe{1 }
+Gegeben sei die Sprache $ L \ = \ \{w \in \{a,b,c\}^* \mid \ w \  beginnt \ mit \ a \ und \ endet \ mit \ b\}. $ 
+\begin{enumerate}[a)]
+\item
+Geben sie einen Regulären Ausdruck G an, sodass L(G) = L.
+\item 
+Geben sie einen deterministischen endlichen Automaten A an, sodass L(A) = L .
+\end{enumerate}
+(WiSe 19/20)
+\\
+\\
+\Aufgabe{2}
+
+Gegeben sei der Reguläre Ausdruck $ R = (x \cup \epsilon)\cdot (y \cup xy)^* $.
+\begin{enumerate} [a)]
+\item
+Geben sie alle Wörter der Sprache $ L_3 = \{w \in L(R) \mid \vert w \vert \leq 3 \}$ explizit an. 
+\item
+Geben sie einen endlichen Automaten A an, sodass L(A) = L(R).
+\end{enumerate}
+(SoSe20)
+\\
+\\
+\Aufgabe{3}
+Gegeben sei der regulärer Ausdruck $R = ac^*b$. Konstruieren sie mit aus der Vorlesung bekannten Methoden einen endlichen Automaten A mit $L(A) = L(R)$.
+\newline
+\textit{Hinweiß: Kein Tupel angeben. Keine Minimierung vornehmen.}
+\newline
+\newline
+\begin{tikzpicture}[auto, thick, auto]
+	\node[initial, state] (S0) {$S_0$};
+	\node[state, right=of S0](S1) {$S_1$};
+	\node[initial, state, below= of S0](P0) {$P_0$};
+	\node[state, right=of P0](P1) {$P_1$};
+	\node[initial, state, below= of P0](N0) {$N_0$};
+	\node[state, right=of N0](N1) {$N_1$};
+\path[->]
+(S0) edge node {a}(S1)
+(P0) edge node {c}(P1)
+(N0) edge node {b}(N1)
+;
+\end{tikzpicture}
+
+(SoSe17 Probe)
+
+\Aufgabe{4}
+
+Gegeben sei der regulärer Ausdruck $R = ((a \cup c ) b )^*$. Konstruieren sie mit aus der Vorlesung bekannten Methoden einen endlichen Automaten A mit $L(A) = L(R)$.
+\newline
+\textit{Hinweiß: Kein Tupel angeben. Keine Minimierung vornehmen.}
+\newline
+\newline
+\begin{tikzpicture}[auto, thick, auto]
+	\node[initial, state] (S0) {$S_0$};
+	\node[state, right=of S0](S1) {$S_1$};
+	\node[initial, state, below= of S0](P0) {$P_0$};
+	\node[state, right=of P0](P1) {$P_1$};
+	\node[initial, state, below= of P0](N0) {$N_0$};
+	\node[state, right=of N0](N1) {$N_1$};
+\path[->]
+(S0) edge node {a}(S1)
+(P0) edge node {c}(P1)
+(N0) edge node {b}(N1)
+;
+\end{tikzpicture}
+
+(SoSe17 )
+
+\Aufgabe{5}
+Gegeben sei folgender nichtdeterministischer endlicher Automat.
+$$ A = (\{x,y\},\{N_0,N_1,N_2,N_3\}, \{N_0,N_2\}, \delta \ gem"aß \ Graph, \{N_1,N_3\})$$
+
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (N0) {$N_0$};
+  \node[state, right=of N0, accepting] (N1) {$N_1$};
+\path[->]
+(N0) edge [bend left] node {x} (N1)
+(N1) edge [loop above] node {y} (N1);
+\end{tikzpicture}
+
+\begin{tikzpicture}[auto, thick, auto]
+   \node[initial, state] (N2) {$N_2$};
+     \node[state, right=of N2, accepting] (N3) {$N_3$};
+\path[->]
+(N2) edge [bend left] node {y} (N3)
+(N2) edge [loop above] node {x} (N2);
+\end{tikzpicture}
+\\
+\\
+Geben sie einen regulären Ausdruck G an, sodass L(G) = L(A).\\
+(SoSe17)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
