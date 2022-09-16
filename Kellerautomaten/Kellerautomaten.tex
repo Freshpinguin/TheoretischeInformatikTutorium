@@ -1,0 +1,166 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{OHM}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Definition #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Kellerautomaten}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium\Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Kellerautomaten}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Definition{Nichtdeterministischer Kellerautomat}
+Ein nichtdeterministischer Kellerautomat $KA = (X,K,k_0,S,s_0,\delta, F)$ besteht aus:
+\begin{align*}
+X&: Eingabealphabet \\
+K&: Kelleralphabet \\
+k_0&: Kellerstartsymbol \in K \\
+S&: Zustandsmenge \\
+s_0&: Startzustand \in S \\
+\delta &: Zustands"ubergangsfunktion: \delta : S \times (X \cup \{\epsilon \} )  \times K \rightarrow P_{endl}(S \times K^*) \\
+F&: Menge\ der \ Endzust"ande \subseteq S\\
+\end{align*}
+
+\Definition{Konfiguration eines Kellerautomaten}
+Die Konfiguration eines Kellerautomaten KA ist ein Triple $(s,w,l)$:
+\begin{align*}
+s \in S&: Aktueller\ Zustand \\
+w\in X^*&: Resteingabe \\
+l \in K^*&: Wort \ auf \ dem \  Keller  \\
+\end{align*}
+
+\Aufgabe{1} 
+Konstruieren sie einen Kellerautomat der die Sprache L akzeptiert. Für L =
+\begin{enumerate}[a)]
+\item
+$$\{ a^n b^n c^m d^m \mid n,m \in \mathbb{N} \}$$
+\item
+$$\{ a^n b^m c^m d^n \mid n,m \in \mathbb{N} \}$$
+\item
+$$\{ a^n b^m a^n \mid n,m \in \mathbb{N} \}$$
+\item
+$$\{ a^{2n}b^n \mid n \in \mathbb{N} \}$$
+\item
+$$\{ a^m b^n \mid m \in \mathbb{N}, n \in \mathbb{N}_0, m>n \}$$
+\item
+$$\{  a^m b^n c^i \mid m \in \mathbb{N}_0, n,i \in \mathbb{N}, m+n = i\}$$
+\item
+$$\{  a^m  c^i  b^n\mid m \in \mathbb{N}_0, n,i \in \mathbb{N}, m+n = i\}$$
+\item
+$$\{  a^m b^n   c^i  d ^{m+n+k+i+j} e^k \mid m,n,i,j,k \in \mathbb{N} \}$$
+\end{enumerate}
+\Aufgabe{2}
+Sei L = $\{a^m b^{n}c^l b^{n+2}a^{m+k}\ \vert m,n,l\in \mathbb{N}, k \in \mathbb{N}_0\}$. \\
+Geben sie einen deterministischen Kellerautomaten KA an,  mit L(KA) = L.
+(WiSe19/20)
+
+
+\Aufgabe{3}
+
+Konstruieren sie einen deterministischen Kellerautomaten, der die Sprache\\ L = $\{b^n a \mid n \in \mathbb{N}\} $ akzeptiert.   
+(SoSe 17 Probe).
+
+\Aufgabe{4}
+Konstruieren sie einen deterministischen Kellerautomaten, der die Sprache\\ L = $\{a^n b^{2n} c^m \mid n \in \mathbb{N}, m \in \mathbb{N}_0\} $ im Endzustand akzeptiert.   
+
+(SoSe 20).
+
+\Aufgabe{5}
+
+Konstruieren sie einen deterministischen Kellerautomaten, der die Sprache\\ L = $\{a^{2m} b^{n} d^n e^m f^l \mid m,n \in \mathbb{N}, l \in \mathbb{N}_0\} $  akzeptiert.   
+(SoSeProbe 20).
+
+\Aufgabe{6}
+
+Konstruieren sie einen deterministischen Kellerautomaten, der die Sprache\\ L = $\{a^{n} b a^m \mid m,n \in \mathbb{N}; m \geq n \} $  akzeptiert.   
+(SoSe 17).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+

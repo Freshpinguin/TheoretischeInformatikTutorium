@@ -1,0 +1,200 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,automata}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Theoretische Informatik}
+\newcommand{\Name}{Robin Feldmann}
+\newcommand{\Tutorium}{}
+\newcommand{\Semester}{OHM}
+\newcommand{\KlausurLoesung }{SoSe2020} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+\newcommand{\Definition}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Definition #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \KlausurLoesung{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt Deterministische Endliche Automaten}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} }
+\rhead{\sf \Semester{} \\  Tutorium \Tutorium{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Turingautomaten}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Definition{Turingautomat}
+Ein Turingautomat  $M = (X,B,S,s_0,\delta,s_f)$ besteht aus:
+\begin{align*}
+X&: Eingabealphabet \\
+B&: Bandalphabet,\ X\subset B, \# \in B \setminus X \\
+S&: Endliche \  Zustandsmenge\\
+s_0&: Startzustand \in S \\
+s_f&: Haltezustand, \notin S \\
+\delta &: Zustands"ubergangsfunktion: \delta : S \times B  \rightarrow ((S \cup \{s_f\}) \times ( B \cup \{L,R \})) \cup \{\emptyset \}   \\
+\end{align*}
+
+\Aufgabe{1}
+Konstruieren Sie einen Turingautomat, der für ein Wort $x \in \{c,d\}^*$ die Anzahl der Buchstaben $\vert x \vert$ berechnet und in Unärdarstellung auf das Band legt. Nach durchlaufen des Automaten, stehen nur die Anzahl der Buchstaben auf dem Band und der Lesekopf steht auf Anfang.
+Es genügt den Zustandsübergangsgraphen anzugeben. (Angelehnt an SoSe2020) 
+
+
+\Aufgabe{2} 
+Für die Sprache $L = \{ x \in \{c,d\}^* \vert \text{ x beginnt mit c und endet mit d}\}$ soll ein Turingautomat konstruiert werden, der diese akzeptiert. Geben Sie den Zustandsübergangsgraphen an. (Angelehnt an SoSe2020 Probe).
+
+\Aufgabe{3}
+Der Turingautomat T mit folgendem Zustandsübergangsgraph, bekommt als Eingabe ''aa\$''.
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (S0) {$S_0$};
+  \node[state, right=of S0] (S1) {$S_1$};
+   \node[state, right=of S1] (S2) {$S_2$};
+    \node[state, right=of S2] (S3) {$S_3$};
+    \node[state, below=of S2] (S4) {$S_4$};
+    \node[state, below=of S1] (S5) {$S_5$};
+      \node[state, below=of S0] (S6) {$S_6$};
+    \node[accepting, state, below= of S5] (Sf) {$S_f$};
+\path[->]
+(S1) edge [loop above] node {a/R} (S1)
+(S6) edge [loop below] node {a/L} (S6)
+(S0) edge [loop above] node {a/\#} (S0)
+(S2) edge [loop above] node {b/R} (S2)
+(S3) edge [loop right] node {b/R} (S3)
+(S4) edge [loop below] node {b/L} (S4)
+(S1) [bend left]edge node {\$/R} (S2)
+(S2) [bend left]edge node {\#/b} (S3)
+(S0) edge node {\#/R} (S1)
+(S3) [bend left]edge node {\#/b} (S4)
+(S4) [bend left]edge node {\$/L} (S5)
+(S5) [bend left]edge node {a/L} (S6)
+(S6) [bend left]edge node {\#/R} (S0)
+(S5) [bend right]edge node {\#/\#} (Sf);
+\end{tikzpicture}
+\begin{enumerate}[a)]
+\item Geben Sie die Konfigurationenfolge von der Startkonfiguration bis zum einmaligen Erreichen des Zustands $S_5$ an.
+\item Mit welcher Konfiguration stoppt der Automat T bei der Eingabe ''aa\$''?.
+\item Welche Sprache akzeptiert der Automat T?
+\item Welche Berechnung führt der Automat T aus?
+\end{enumerate}
+(Angelehnt an SoSe17 Probe)\\
+
+\Aufgabe{4}
+Eine Turingmaschine M, erhält als Eingabe eine unicodierte Zahl.
+
+\begin{tikzpicture}[auto, thick, auto]
+  \node[initial,state] (A) {$A$};
+   \node[state, right=of A] (B) {$B$};
+   \node[state, right=of B] (C) {$C$};
+   \node[state, right=of C] (D) {$D$};
+    \node[state, right=of D] (E) {$E$};
+    \node[state, right=of E] (F) {$F$};
+    \node[state, below=of F] (G) {$G$};
+     \node[state, below=of D] (H) {$H$};
+     \node[accepting, state, below=of B] (Sf) {$S_f$};
+
+\path[->]
+(A)  edge [loop above] node {I/\#} (A)
+(A)  edge [bend right]node {\#/R} (B)
+
+(B) edge node {I/\#} (C)
+(B) edge node {\#/I} (Sf)
+
+(C) edge node {\#/R} (D)
+
+(D) edge node {I/\#} (E)
+(D) edge node {\#/I} (H)
+
+(E) edge [bend right] node {\#/R} (F)
+(F) edge [bend right] node {I/\#} (A)
+
+(F) edge node {\#/I} (G)
+
+(G) edge [loop below]node {I/L} (G)
+(G) edge node {\#/I} (H)
+
+(H) edge [loop below]node {I/L} (H)
+(H) edge node {\#/I} (Sf);
+\end{tikzpicture}
+\begin{enumerate} [a)]
+\item Welche Konfigurationen durchläuft der Automat für den Eingabewert 4?
+\item Geben Sie das Automatentupel für M an.
+\item Welche Sprache akzeptiert der Turingautomat M?
+\item Welche Berechnung führt der Automat M aus?
+\end{enumerate}
+(Angelehnt an SoSe17)\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
