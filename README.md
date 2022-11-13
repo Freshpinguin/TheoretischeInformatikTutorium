@@ -1,4 +1,10 @@
 # TheoretischeInformatikTutorium
-Arbeitsmaterial für das Tutorium Theoretische Informatik
 
-In den Ordner sind jewils die .tex Datein und die PDFS.
+## Arbeitsblätter
+
+[DEA](./DEA/DEAS.pdf)
+
+https://github.com/Freshpinguin/TheoretischeInformatikTutorium/blob/main/DEA/DEAS.pdf
+
+### NEA
+
