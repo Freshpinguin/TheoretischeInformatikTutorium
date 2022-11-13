@@ -2,19 +2,19 @@
 
 ## Aufgabe 1 (11 Punkte)
 
-Endlicher Automat $X = (\{x,y\}, \{N_0, N_1, K_0, K_1\},\{N_0, K_0\}, \delta \text{ wie Graph },\{N_1, T_1 \}) $
+Endlicher Automat $X = (\lbrace x,y \rbrace,\lbrace N_0, N_1, K_0, K_1 \rbrace , \lbrace N_0, K_0 \rbrace, \delta \text{ wie Graph }, \lbrace N_1, T_1 \rbrace ) $
 
 ![Aufgabe1 Image](Images/SoSe17_Aufgabe1.png)
 
 ### a) 
 Finde regulären Ausdruck Z, so dass $L(Z)=L(X)$
 ### b)
-Erstelle den zugehörigen deterministischen endlichen Automaten $X^d$ an.
+Erstelle den zugehörigen deterministischen endlichen Automaten $X^d$.
 
 ## Aufgabe 2 (8 Punkte)
 
 Sei $X = ((x\cup y)z)^*$ ein regulärer Ausdruck.
-Erstelle einen endlichen Automaten B, sodass $ L(B)=L(X)$.
+Erstelle einen endlichen Automaten B, sodass $L(B)=L(X)$.
 Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nicht angegeben werden und der Automat soll nicht minimiert werden.
 
 ![Aufgabe2 Image](Images/SoSe17_Aufgabe2.png)
@@ -22,20 +22,20 @@ Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nic
 ### Aufgabe 3 (12 Punkte)
 
 ### a) 
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m>n \}$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$.
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ### b)
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \}$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \rbrace$.
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ## Aufgabe 4(8 Punkte)
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m>n \}$. Konstruiere einen deterministischen Kellerautomaten B, dessen akzeptierte Sprache gleich L ist.
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$. Konstruiere einen deterministischen Kellerautomaten B, dessen akzeptierte Sprache gleich L ist.
 
 
 ## Aufgabe 5(14 Punkte)
 
-Endlicher deterministscher Automat $X_1 = (\{a,b\},\{n_0,n_1,n_2,n_3,n_4,n_5,n_6\},n_0, \delta_{X_1}, \{n_1,n_2,n_4,n_6\})$
+Endlicher deterministscher Automat $X_1 = (\lbrace a,b \rbrace ,\lbrace n_0,n_1,n_2,n_3,n_4,n_5,n_6 \rbrace ,n_0, \delta_{X_1}, \lbrace n_1,n_2,n_4,n_6 \rbrace)$
 
 
 Zustandsübergangsgraph:
@@ -62,10 +62,10 @@ Sind $X_1$ und $X_3$ äquivalent? Mit Begründung!
 
 ## Aufgabe 6(13 Punkte)
 ### a)
-Sprache $L = \{x^n(yz)^m |n\in \mathbb{N}, m\in \mathbb{N}_0 \}$.
+Sprache $L = \lbrace x^n(yz)^m |n\in \mathbb{N}, m\in \mathbb{N}_0 \rbrace$.
 Konstruiere eine Grammatik von möglichst hohem Typ, die L erzeugt.
 ### b)
-Sprache $L = \{x^n y^{m+n}z^k (uv)^{m+k} |n,m,k \in \mathbb{N} \}$
+Sprache $L = \lbrace x^n y^{m+n}z^k (uv)^{m+k} |n,m,k \in \mathbb{N} \rbrace$
 Konstruiere eine Grammatik mit möglichst hohem Typ, die L erzeugt.
 
 ## Aufgabe 7(14 Punkte)
