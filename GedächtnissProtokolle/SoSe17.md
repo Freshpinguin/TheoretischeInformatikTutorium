@@ -54,7 +54,9 @@ Nutze das Minimierungsverfahren und gebe den zu $X_1$ minimalen Automaten $X_{1,
 Zustandsübergangsgraphen von $X_1, X_2, X_3$.
 
 ![Aufgabe5 X2 Graph](Images/SoSe17_Aufgabe5_3.png)
+
 ![Aufgabe5 X3 Graph](Images/SoSe17_Aufgabe5_4.png)
+
 Sind $X_1$ und $X_2$ äquivalent? Sind $X_1$ und $X_2$ isomorph? Mit Begründung!
 
 ### c)
