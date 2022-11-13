@@ -22,11 +22,11 @@ Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nic
 ### Aufgabe 3 (12 Punkte)
 
 ### a) 
-Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$.
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ### b)
-Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \rbrace$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \rbrace$.
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ## Aufgabe 4(8 Punkte)
