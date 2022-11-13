@@ -22,20 +22,20 @@ Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nic
 ### Aufgabe 3 (12 Punkte)
 
 ### a) 
-Sprache $L= \\{x^n y x^m | n,m \in \mathbb{N}; m>n \\}$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ### b)
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \}$
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m+n = 5 \rbrace$
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ## Aufgabe 4(8 Punkte)
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m>n \}$. Konstruiere einen deterministischen Kellerautomaten B, dessen akzeptierte Sprache gleich L ist.
+Sprache $L= \lbrace x^n y x^m | n,m \in \mathbb{N}; m>n \rbrace$. Konstruiere einen deterministischen Kellerautomaten B, dessen akzeptierte Sprache gleich L ist.
 
 
 ## Aufgabe 5(14 Punkte)
 
-Endlicher deterministscher Automat $X_1 = (\{a,b\},\{n_0,n_1,n_2,n_3,n_4,n_5,n_6\},n_0, \delta_{X_1}, \{n_1,n_2,n_4,n_6\})$
+Endlicher deterministscher Automat $X_1 = (\lbrace a,b \rbrace ,\lbrace n_0,n_1,n_2,n_3,n_4,n_5,n_6 \rbrace ,n_0, \delta_{X_1}, \lbrace n_1,n_2,n_4,n_6 \rbrace)$
 
 
 Zustandsübergangsgraph:
