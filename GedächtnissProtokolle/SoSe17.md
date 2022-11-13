@@ -2,7 +2,7 @@
 
 ## Aufgabe 1 (11 Punkte)
 
-Endlicher Automat $X = ({x,y\}, \{N_0, N_1, K_0, K_1\},\{N_0, K_0\}, \delta \text{ wie Graph },\{N_1, T_1 \}) $
+Endlicher Automat $X = ({\\x,y\\}, \\{N_0, N_1, K_0, K_1\\},\\{N_0, K_0\\}, \delta \text{ wie Graph },\\{N_1, T_1 \\}) $
 
 ![Aufgabe1 Image](Images/SoSe17_Aufgabe1.png)
 
