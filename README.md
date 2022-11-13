@@ -17,4 +17,4 @@
 
 [SoSe17](./GedächtnissProtokolle/SoSe17.md)
 
-[SoSe20)(./GedächtnissProtokolle/SoSe20.md)
+[SoSe20](./GedächtnissProtokolle/SoSe20.md)
