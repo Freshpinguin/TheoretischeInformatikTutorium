@@ -22,7 +22,7 @@ Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nic
 ### Aufgabe 3 (12 Punkte)
 
 ### a) 
-Sprache $L= \{x^n y x^m | n,m \in \mathbb{N}; m>n \}$
+Sprache $L= \\{x^n y x^m | n,m \in \mathbb{N}; m>n \\}$
 Ist die Sprache regulär? Widerlege oder beweise.
 
 ### b)
