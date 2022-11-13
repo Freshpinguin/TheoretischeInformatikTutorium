@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.2)  29 NOV 2021 14:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.2)  14 NOV 2022 00:58
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Formale Sprachen.tex"
-(./Formale Sprachen.tex
+**FormaleSprachen.tex
+(./FormaleSprachen.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -856,8 +856,8 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count304
 \l__pdf_internal_box=\box84
 )
-(./Formale Sprachen.aux)
-\openout1 = `"Formale Sprachen.aux"'.
+No file FormaleSprachen.aux.
+\openout1 = `FormaleSprachen.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
@@ -875,7 +875,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
-
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
@@ -917,12 +916,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 84.
 LaTeX Info: Redefining \pageref on input line 84.
 LaTeX Info: Redefining \nameref on input line 84.
- (./Formale Sprachen.out) (./Formale Sprachen.out)
 \@outlinefile=\write4
-\openout4 = `"Formale Sprachen.out"'.
+\openout4 = `FormaleSprachen.out'.
 
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 
@@ -965,21 +962,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--185
 [2] [3]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 230.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 230.
- (./Formale Sprachen.aux)
+ (./FormaleSprachen.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 230.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 230.
-Package rerunfilecheck Info: File `"Formale Sprachen".out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+Package rerunfilecheck Warning: File `FormaleSprachen.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `FormaleSprachen.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
  ) 
 Here is how much of TeX's memory you used:
- 20484 strings out of 480608
- 381376 string characters out of 5903631
- 843735 words of memory out of 5000000
+ 20478 strings out of 480608
+ 381235 string characters out of 5903631
+ 843662 words of memory out of 5000000
  35911 multiletter control sequences out of 15000+600000
  541071 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,11n,68p,436b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,11n,68p,433b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
@@ -992,7 +996,7 @@ ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loca
 l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/
 texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Formale Sprachen.pdf" (3 pages, 120534 bytes).
+Output written on FormaleSprachen.pdf (3 pages, 120534 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
