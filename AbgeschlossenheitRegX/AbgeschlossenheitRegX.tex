@@ -121,10 +121,10 @@ eine regul"are Sprache.
 \Aufgabe{1}
 Gegeben seien die folgende Endlichen Automaten
 $$
-A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3\},\{S_0\},\delta_1 \ siehe\  Graph,\{S_2,S_3\})
+A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3\},S_0,\delta_1 \ siehe\  Graph,\{S_2,S_3\})
 $$
 $$
-A_2 = (\{a,b\},\{I_0,I_1,I_2\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_2\})
+A_2 = (\{a,b\},\{I_0,I_1,I_2\},I_0,\delta_2 \ siehe\  Graph,\{I_2\})
 $$
 
 $A_1$\\
@@ -140,7 +140,7 @@ $A_1$\\
 (S2) edge [bend right] node {a,b} (S1)
 (S0) edge [bend right] node {a} (S3)
 (S3) edge [bend right] node {b} (S2)
-
+(S3) edge [loop below] node {a,b} (S3)
 
 ;
 \end{tikzpicture}
@@ -173,10 +173,10 @@ Konstruieren sie mit den aus der Vorlesung bekannten Verfahren folgende Automate
 \Aufgabe{2}
 Gegeben seien die folgende Endlichen Automaten
 $$
-A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3,S_4,S_5\},\{S_0\},\delta_1 \ siehe\  Graph,\{S_4,S_5\})
+A_1 = (\{a,b\},\{S_0,S_1,S_2,S_3,S_4,S_5\},S_0,\delta_1 \ siehe\  Graph,\{S_4,S_5\})
 $$
 $$
-A_2 = (\{a,b\},\{I_0,I_1,I_2\},\{I_0\},\delta_2 \ siehe\  Graph,\{I_2\})
+A_2 = (\{a,b\},\{I_0,I_1,I_2\},I_0,\delta_2 \ siehe\  Graph,\{I_2\})
 $$
 
 $A_1$\\
@@ -190,12 +190,14 @@ $A_1$\\
 \path[->]
 (S0) edge [bend left] node {a} (S1)
 (S1) edge [bend left] node {a} (S2)
+(S1) edge [bend left] node {b} (S0)
 (S2) edge [bend left] node {b} (S1)
 (S2) edge [bend left] node {a} (S4)
 (S0) edge [bend left] node {b} (S3)
 (S4) edge [bend left] node {a} (S3)
 (S5) edge [bend left] node {a,b} (S3)
 (S4) edge [bend left] node {b} (S5)
+(S3) edge [loop below] node {a,b} (S3)
 
 ;
 \end{tikzpicture}
