@@ -1,4 +1,4 @@
-# Theoretische Informatik Sommer Semester 2017
+# Klausur Theoretische Informatik Sommer Semester 2017
 
 ## Aufgabe 1 (11 Punkte)
 
