@@ -9,12 +9,12 @@ Endlicher Automat $X = (\{x,y\}, \{N_0, N_1, K_0, K_1\},\{N_0, K_0\}, \delta \te
 ### a) 
 Finde regulären Ausdruck Z, so dass $L(Z)=L(X)$
 ### b)
-Erstelle den zugehörigen deterministischen endlichen Automaten $X^d$ an.
+Erstelle den zugehörigen deterministischen endlichen Automaten $X^d$.
 
 ## Aufgabe 2 (8 Punkte)
 
 Sei $X = ((x\cup y)z)^*$ ein regulärer Ausdruck.
-Erstelle einen endlichen Automaten B, sodass $ L(B)=L(X)$.
+Erstelle einen endlichen Automaten B, sodass $L(B)=L(X)$.
 Benutze hierfür aus der Vorlesung bekannte Vorgehensweißen. Das Tupel muss nicht angegeben werden und der Automat soll nicht minimiert werden.
 
 ![Aufgabe2 Image](Images/SoSe17_Aufgabe2.png)
