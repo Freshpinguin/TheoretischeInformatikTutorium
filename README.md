@@ -10,7 +10,7 @@
 
 [Abgeschlossenheit von RegX](./AbgeschlossenheitRegX/AbgeschlossenheitRegX.pdf)
 
-[Reguläre Ausdrücke](./Reguläre Ausdrücke/Reguläre Ausdrücke.pdf)
+[Reguläre Ausdrücke](./ReguläreAusdrücke/ReguläreAusdrücke.pdf)
 
 
 ## Gedächtnissprotokoll von Altklausuren
