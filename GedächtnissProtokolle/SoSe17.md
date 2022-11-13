@@ -2,7 +2,7 @@
 
 ## Aufgabe 1 (11 Punkte)
 
-Endlicher Automat $X = (\lbrace x,y \rbrace, \\{N_0, N_1, K_0, K_1\\},\\{N_0, K_0\\}, \delta \text{ wie Graph },\\{N_1, T_1 \\}) $
+Endlicher Automat $X = (\lbrace x,y \rbrace,\lbrace N_0, N_1, K_0, K_1 \rbrace , \lbrace N_0, K_0 \rbrace, \delta \text{ wie Graph }, \lbrace N_1, T_1 \rbrace ) $
 
 ![Aufgabe1 Image](Images/SoSe17_Aufgabe1.png)
 
@@ -62,10 +62,10 @@ Sind $X_1$ und $X_3$ äquivalent? Mit Begründung!
 
 ## Aufgabe 6(13 Punkte)
 ### a)
-Sprache $L = \{x^n(yz)^m |n\in \mathbb{N}, m\in \mathbb{N}_0 \}$.
+Sprache $L = \lbrace x^n(yz)^m |n\in \mathbb{N}, m\in \mathbb{N}_0 \rbrace$.
 Konstruiere eine Grammatik von möglichst hohem Typ, die L erzeugt.
 ### b)
-Sprache $L = \{x^n y^{m+n}z^k (uv)^{m+k} |n,m,k \in \mathbb{N} \}$
+Sprache $L = \lbrace x^n y^{m+n}z^k (uv)^{m+k} |n,m,k \in \mathbb{N} \rbrace$
 Konstruiere eine Grammatik mit möglichst hohem Typ, die L erzeugt.
 
 ## Aufgabe 7(14 Punkte)
