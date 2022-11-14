@@ -13,9 +13,9 @@ Hilfsmittel: 8 Seiten selbstgefertigte Unterlagen
 
 Endliche Automaten 
 
-$X_S = (\lbrace x,y,z \rbrace, \lbrace S_0, S_1, S_2 \rbrace,\lbrace S_0 \rbrace ,\delta_S wie Graph, \lbrace S_1, S_2 \rbrace) $
+$X_S = (\lbrace x,y,z \rbrace, \lbrace S_0, S_1, S_2 \rbrace,\lbrace S_0 \rbrace ,\delta_S \text{ wie Graph }, \lbrace S_1, S_2 \rbrace) $
 
-$X_T = (\lbrace x,y,z \rbrace, \lbrace T_0, T_1 \rbrace, \lbrace T_0 \rbrace, \delta_T wie Graph, \lbrace T_1 \rbrace )$.
+$X_T = (\lbrace x,y,z \rbrace, \lbrace T_0, T_1 \rbrace, \lbrace T_0 \rbrace, \delta_T \text{ wie Graph }, \lbrace T_1 \rbrace )$.
 
 Erstelle den endlichen Automaten $(X_S^* \cdot X_T)$ unter Verwendung von aus der Vorlesung bekannten Methoden. Sie müssen kein Tupel angeben und das Ergebniss soll nicht minimiert werden.
 
