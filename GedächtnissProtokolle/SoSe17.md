@@ -80,4 +80,4 @@ Gebe das Tupel von T an.
 ### c)
 Welche Sprache wird von T akzeptiert?
 ### d)
-Für eine Eingabe $n \in \mathbb{N}_n$, überlege welcher Wert auf dem Band liegt, wenn der Automat den Endzustand erreicht. Was berechnet T?
+Für eine Eingabe $n \in \mathbb{N}_0$, überlege welcher Wert auf dem Band liegt, wenn der Automat den Endzustand erreicht. Was berechnet T?
