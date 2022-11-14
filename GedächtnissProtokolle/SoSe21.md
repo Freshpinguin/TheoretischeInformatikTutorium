@@ -75,7 +75,11 @@ Bilde die Typ-2 Normalform von G. Für jeden Schritt des Verfahrens muss die Pro
 ## Aufgabe 7 (8 Punkte)
 
 
-Alphabet $X = \lbrace a,b, \$ \rbrace $.
+Alphabet 
+
+$X = \lbrace a,b, \$ \rbrace $
+
+.
 
 
 Funktion f:
