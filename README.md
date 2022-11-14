@@ -12,6 +12,13 @@
 
 [Reguläre Ausdrücke](./ReguläreAusdrücke/ReguläreAusdrücke.pdf)
 
+[Minimierung](./Minimierung/Minimierung.pdf)
+
+[Formale Sprache](./FormaleSprachen/FormaleSprachen.pdf)
+
+[Kellerautomaten](./Kellerautomaten/Kellerautomaten.pdf)
+
+[Turingautomaten](./Turingautomaten/Turingautomaten.pdf)
 
 ## Gedächtnissprotokoll von Altklausuren
 
