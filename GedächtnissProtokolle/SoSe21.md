@@ -74,14 +74,22 @@ Bilde die Typ-2 Normalform von G. Für jeden Schritt des Verfahrens muss die Pro
 
 ## Aufgabe 7 (8 Punkte)
 
-Alphabet $ X = \lbrace a,b, \$ \rbrace $. Funktion f:
+
+Alphabet $X = \lbrace a,b, \$ \rbrace $.
+
+
+Funktion f:
+
 
 $ f: a^n \rightarrow \$b^{n-1} $.
 
 
+
 Für alle $n \in \mathbb{N} $. z.B.: 
 
+
 $f(aaa) = \$bb$.
+
 
 Erstelle eine deterministische Turingmaschine T, welche die gleiche Berechnung wie $f$ ausführt. 
 
