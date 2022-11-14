@@ -27,3 +27,5 @@ Tutorium für Theoretische Informatik an der TH-Nürnberg Fakultät Informatik v
 [SoSe17](./GedächtnissProtokolle/SoSe17.md)
 
 [SoSe20](./GedächtnissProtokolle/SoSe20.md)
+
+[SoSe21](./GedächtnissProtokolle/SoSe21.md)
