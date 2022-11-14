@@ -20,7 +20,7 @@
 
 [Turingautomaten](./Turingautomaten/Turingautomaten.pdf)
 
-## Gedächtnissprotokoll von Altklausuren
+## Gedächtnissprotokolle von Altklausuren
 
 [SoSe17](./GedächtnissProtokolle/SoSe17.md)
 
