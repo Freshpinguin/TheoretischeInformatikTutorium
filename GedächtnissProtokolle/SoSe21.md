@@ -62,7 +62,9 @@ Sprache $S = \lbrace x^{n+1}y^{2n} | n \in \mathbb{N} \rbrace $. Erstelle einen 
 
 Grammatik 
 
-$ G = (\lbrace X,Y,Z \rbrace, \lbrace y,z \rbrace ,X, P )$
+
+$G = (\lbrace X,Y,Z \rbrace, \lbrace y,z \rbrace ,X, P )$
+
 
 mit den Produktionen 
 
