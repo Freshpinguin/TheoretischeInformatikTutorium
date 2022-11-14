@@ -1,5 +1,7 @@
 # TheoretischeInformatikTutorium
 
+Tutorium für Theoretische Informatik an der TH-Nürnberg Fakultät Informatik von Robin Feldmann
+
 ## Arbeitsblätter
 
 [DEA](./DEA/DEAS.pdf)
