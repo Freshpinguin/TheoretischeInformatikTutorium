@@ -81,14 +81,14 @@ Alphabet $X = \lbrace a,b, \\$ \rbrace $.
 Funktion f:
 
 
-$ f: a^n \rightarrow \$b^{n-1} $.
+$ f: a^n \rightarrow \\$b^{n-1} $.
 
 
 
 Für alle $n \in \mathbb{N} $. z.B.: 
 
 
-$f(aaa) = \$bb$.
+$f(aaa) = \\$bb$.
 
 
 Erstelle eine deterministische Turingmaschine T, welche die gleiche Berechnung wie $f$ ausführt. 
