@@ -81,7 +81,9 @@ Alphabet $X = \lbrace a,b, \\$ \rbrace $.
 Funktion f:
 
 
-$ f: a^n \rightarrow  b^{n-1} $.
+
+$f: a^n \rightarrow  b^{n-1}$
+
 
 
 
