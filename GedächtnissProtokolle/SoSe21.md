@@ -28,7 +28,7 @@ Sprache $L = \lbrace xy^mz^n|m,n \in \mathbb{N}; n = m + 3 \rbrace $. Zeige, das
 ## Aufgabe 3 (10 Punkte)
 
 
-Endlicher deterministscher Automat $A = (\lbrace 0,1\rbrace, \lbrace S_0, S_1,S_2,S_3,S_4 \rbrace , S_0, \delta_A wie Graph, \lbrace S_3,S_4 \rbrace)$.
+Endlicher deterministscher Automat $A = (\lbrace 0,1\rbrace, \lbrace S_0, S_1,S_2,S_3,S_4 \rbrace , S_0, \delta_A \text{ wie Graph }, \lbrace S_3,S_4 \rbrace)$.
 
 
 ![Aufgabe3 Image](Images/SoSe21_Aufgabe3.png)
@@ -45,7 +45,8 @@ $P = \lbrace X \rightarrow Y, Y \rightarrow yyZ|xYyZ, Z \rightarrow y \rbrace $.
 
 Leite das Wort 
 
-$ w = xyyzyz $
+$w = xyyzyz$
+
 
 schrittweise aus dem Startsymbol ab. 
 
