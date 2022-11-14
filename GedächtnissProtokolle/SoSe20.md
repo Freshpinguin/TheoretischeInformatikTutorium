@@ -11,8 +11,9 @@ Hilfsmittel: 8 Seiten selbstgefertigte Unterlagen
 
 ## Aufgabe 1 (8 Punkte)
 
-Endliche Automaten $X_S = (\lbrace x,y,z \rbrace, \lbrace S_0, S_1, S_2 \rbrace,\lbrace S_0 \rbrace ,\delta_S wie Graph, \lbrace S_1, S_2 \rbrace) $
+Endliche Automaten 
 
+$X_S = (\lbrace x,y,z \rbrace, \lbrace S_0, S_1, S_2 \rbrace,\lbrace S_0 \rbrace ,\delta_S wie Graph, \lbrace S_1, S_2 \rbrace) $
 
 $X_T = (\lbrace x,y,z \rbrace, \lbrace T_0, T_1 \rbrace, \lbrace T_0 \rbrace, \delta_T wie Graph, \lbrace T_1 \rbrace )$.
 
