@@ -37,7 +37,9 @@ Minimiere A mit dem aus der Vorlesungs bekannten Minimierungsverfahren. Alle im 
 
 ## Aufgabe 4 (8 Punkte)
 
-Grammatik $G = (\lbrace X, Y,Z \rbrace, \lbrace x,y,z \rbrace, X, P)$ mit den Produktionen $P = \lbrace X \rightarrow Y, Y \rightarrow yyZ|xYyZ, Z \rightarrow y \rbrace $.
+Grammatik $G = (\lbrace X, Y,Z \rbrace, \lbrace x,y,z \rbrace, X, P)$ mit den Produktionen 
+
+$P = \lbrace X \rightarrow Y, Y \rightarrow yyZ|xYyZ, Z \rightarrow y \rbrace $.
 
 ### a)
 
