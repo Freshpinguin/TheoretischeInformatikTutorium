@@ -82,7 +82,7 @@ Funktion f:
 
 
 
-$f: a^n \rightarrow  b^{n-1}$
+$f: a^n \rightarrow  \\$ b^{n-1}$
 
 
 
