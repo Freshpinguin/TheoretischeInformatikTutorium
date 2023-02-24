@@ -27,7 +27,9 @@ Sprache $L = \lbrace xy^mz^n|m,n \in \mathbb{N}; n = m + 3 \rbrace $. Zeige, das
 
 ## Aufgabe 3 (10 Punkte)
 
-Endlicher deterministscher Automat $ A = (\lbrace 0,1\rbrace, \lbrace S_0, S_1,S_2,S_3,S_4 \rbrace , S_0, \delta_A wie Graph, \lbrace S_3,S_4 \rbrace)$.
+
+Endlicher deterministscher Automat $A = (\lbrace 0,1\rbrace, \lbrace S_0, S_1,S_2,S_3,S_4 \rbrace , S_0, \delta_A \text{ wie Graph }, \lbrace S_3,S_4 \rbrace)$.
+
 
 ![Aufgabe3 Image](Images/SoSe21_Aufgabe3.png)
 
@@ -35,11 +37,18 @@ Minimiere A mit dem aus der Vorlesungs bekannten Minimierungsverfahren. Alle im 
 
 ## Aufgabe 4 (8 Punkte)
 
-Grammatik $G = (\lbrace X, Y,Z \rbrace, \lbrace x,y,z \rbrace, X, P)$ mit den Produktionen $P = \lbrace X \rightarrow Y, Y \rightarrow yyZ|xYyZ, Z \rightarrow y \rbrace $.
+Grammatik $G = (\lbrace X, Y,Z \rbrace, \lbrace x,y,z \rbrace, X, P)$ mit den Produktionen 
+
+$P = \lbrace X \rightarrow Y, Y \rightarrow yyZ|xYyZ, Z \rightarrow y \rbrace $.
 
 ### a)
 
-Leite das Wort $ w = xyyzyz $ schrittweise aus dem Startsymbol ab. 
+Leite das Wort 
+
+$w = xyyzyz$
+
+
+schrittweise aus dem Startsymbol ab. 
 
 ### b)
 
@@ -51,18 +60,38 @@ Sprache $S = \lbrace x^{n+1}y^{2n} | n \in \mathbb{N} \rbrace $. Erstelle einen 
 
 ## Aufgabe 6 (6 Punkte)
 
-Grammatik $ G = (\lbrace X,Y,Z \rbrace, \lbrace y,z \rbrace ,X, P )$ mit den Produktionen $P = \lbrace Y \rightarrow Z|YyZ, Z\rightarrow zz , X \rightarrow Y \rbrace $.
+Grammatik 
+
+
+$G = (\lbrace X,Y,Z \rbrace, \lbrace y,z \rbrace ,X, P )$
+
+
+mit den Produktionen 
+
+$P = \lbrace Y \rightarrow Z|YyZ, Z\rightarrow zz , X \rightarrow Y \rbrace $.
 
 Bilde die Typ-2 Normalform von G. Für jeden Schritt des Verfahrens muss die Produktionsmenge angegeben werden. Ein Tupel ist nicht notwendig.
 
 ## Aufgabe 7 (8 Punkte)
 
-Alphabet $ X = \lbrace a,b, \$ \rbrace $. Funktion $f$:
 
-$ f: a^n \rightarrow \$b^{n-1} $.
+Alphabet $X = \lbrace a,b, \\$ \rbrace $.
 
 
-Für alle $n \in \mathbb{N} $. z.B.: $f(aaa) = \$bb$.
+Funktion f:
+
+
+
+$f: a^n \rightarrow  \\$ b^{n-1}$
+
+
+
+
+Für alle $n \in \mathbb{N} $. z.B.: 
+
+
+$f(aaa) = \\$bb$.
+
 
 Erstelle eine deterministische Turingmaschine T, welche die gleiche Berechnung wie $f$ ausführt. 
 
